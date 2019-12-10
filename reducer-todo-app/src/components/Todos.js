@@ -23,6 +23,7 @@ const Todos = () => {
                     placeholder='Add todo'
                     onChange={handleInputChanges}
                 />
+                {/* will need to add 'onClick' here to add new todo */}
                 <button>Add todo</button>
             </form>
         </div>

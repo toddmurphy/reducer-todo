@@ -6,6 +6,28 @@ export const initialState = {
 
 export const reducer = (state, action) => {
     switch(action.type) {
+        //Add functionality to add/reate a new 'todo'
+        case 'ADD_TODO':
+            return{
+                ...state
+            }
+
+
+        //Add functionality to Toggle completed field
+        case 'COMPLETED_TODO':
+            return{
+                ...state
+            }
+
+
+        //Clear completed todos
+        case 'CLEAR_COMPLETED_TODO':
+            return{
+                ...state
+            }
+
+
+
         default:
         return state;
     }
