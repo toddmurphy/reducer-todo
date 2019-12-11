@@ -31,12 +31,22 @@ export const reducer = (state, action) => {
                 item
             })
 
+                //if/else way instead of ternary
+            // state.items.map(item => {
+            //     if (item.id === id) {
+            //     return {
+            //       ...item,
+            //       completed: !item.completed
+            //       };
+            //     } else {
+            //       return item;
+            //     }
+            //   }) 
+
 
         //Clear completed todos
         case 'CLEAR_COMPLETED_TODO':
-            return state.filter((item) => {
-                return !item.completed
-            })
+            return state.filter(item => !item.completed)
 
 
 
