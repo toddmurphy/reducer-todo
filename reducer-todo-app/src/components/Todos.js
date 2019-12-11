@@ -1,11 +1,15 @@
 import React, { useState, useReducer } from 'react';
 
 import { reducer, initialState } from '../reducers/todoReducer';
+import Todo from './Todo';
 
 const Todos = () => {
 
     //reducer hook --> need to import reducer and initialState
     const [todoState, dispatch] = useReducer(reducer, initialState)
+    console.log(todoState, dispatch)
+
+
 
     const [newTodo, setNewTodo] = useState('');
 
@@ -14,18 +18,28 @@ const Todos = () => {
         setNewTodo(event.target.value);
     }
 
+
+    //set 'handleSubmit' on form to add new todo
+    
+
     return (
         <div>
-            <h3>Todo component --> add single todo here</h3>
             <form>
                 <input
                     type='text'
                     placeholder='Add todo'
                     onChange={handleInputChanges}
+                    value={newTodo}
                 />
                 {/* will need to add 'onClick' here to add new todo */}
                 <button>Add todo</button>
             </form>
+
+            <button>Clear todos</button>
+
+            {todoState.map(todo => {
+                return <Todo key={todo.id} todo={todo} />
+            })}
         </div>
     )
 }
