@@ -20,18 +20,22 @@ const Todos = () => {
 
 
     //set 'handleSubmit' on form to add new todo
-    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        //add a dispatch here to add tod
+        dispatch({type: 'ADD_TODO', payload: newTodo})
+        setNewTodo('');
+    }
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                     type='text'
                     placeholder='Add todo'
                     onChange={handleInputChanges}
                     value={newTodo}
                 />
-                {/* will need to add 'onClick' here to add new todo */}
                 <button>Add todo</button>
             </form>
 

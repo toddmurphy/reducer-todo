@@ -3,10 +3,10 @@ import React from 'react';
 
 const Todo = (props) => {
 
-    const { item, id } = props.todo;
+    const { todo, id } = props.todo;
     return (
         <div>
-            <p>{item}</p>
+            <p>{todo}</p>
             <p>{id}</p>
         </div>
     )
