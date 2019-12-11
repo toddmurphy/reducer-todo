@@ -19,12 +19,20 @@ const Todos = () => {
     }
 
 
-    //set 'handleSubmit' on form to add new todo
+    //setup 'handleSubmit' on form to add new todo
     const handleSubmit = (event) => {
         event.preventDefault();
         //add a dispatch here to add tod
         dispatch({type: 'ADD_TODO', payload: newTodo})
         setNewTodo('');
+    }
+
+    //setup 'handleComplete' --> adds line through completed --> changes 'false' to 'true'
+    
+    // setup 'handleClearTodo' to clear completed todo
+    const handleClearTodo = () => {
+        const filteredTodo = todoState.filter(todo => todo.completed !== true)
+        dispatch({type: 'CLEAR_COMPLETED_TODO', payload: filteredTodo})
     }
 
     return (

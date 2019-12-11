@@ -24,6 +24,7 @@ export const reducer = (state, action) => {
         case 'COMPLETED_TODO':
             return{
                 ...state
+                // completed:
             }
 
 
