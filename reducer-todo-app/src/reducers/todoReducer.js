@@ -34,10 +34,9 @@ export const reducer = (state, action) => {
 
         //Clear completed todos
         case 'CLEAR_COMPLETED_TODO':
-            return{
-                ...state,
-                
-            }
+            return state.filter((item) => {
+                return !item.completed
+            })
 
 
 

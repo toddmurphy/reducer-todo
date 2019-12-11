@@ -36,8 +36,7 @@ const Todos = () => {
     // setup 'handleClearTodo' to clear completed todo
     const handleClearTodo = (event) => {
         event.preventDefault();
-        const filteredTodo = todoState.filter(todo => todo.completed !== true)
-        dispatch({type: 'CLEAR_COMPLETED_TODO', payload: filteredTodo})
+        dispatch({type: 'CLEAR_COMPLETED_TODO'})
     }
 
     return (
